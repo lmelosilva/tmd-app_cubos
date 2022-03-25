@@ -10,14 +10,7 @@
 </div>
 
 <div class="content" role="main">
-    <!-- <ul>
-    <li *ngFor="let movie of movies">
-      
-    </li>
-  </ul> -->
     <input class="search_movies" type="search" (search)="search($event)" placeholder="Busque um filme por nome, ano ou gênero...">
-
-    <!-- <router-outlet></router-outlet> -->
 
     <div *ngIf="!movie_details">
         <div class="container_overview" *ngFor="let movie of movies_filtered;index as i">
@@ -94,49 +87,9 @@
                     </p>
                 </div>
             </div>
-            <!--  -->
         </div>
         <div class="wrapper">
             <img class="img_details" src="https://image.tmdb.org/t/p/w500/{{movie_details.poster_path}}" alt="">
         </div>
     </div>
-
-    <!-- <div class="container" *ngIf="movie_details">
-    <div>
-      <img src="https://image.tmdb.org/t/p/w500/{{movie_details.poster_path}}" alt="">
-    </div>
-    <div style="background-color: #cccbca;">
-      <div style="background-color: #106394; height: 60px;">
-        <p style="font-family: Lato; font-size: 35px; font-weight: 100; color: #01DCDD; text-align: left;">{{movie_details.title}}</p>
-      </div>
-      <div>
-        <p>{{movie_details.release_date}}</p>
-      </div>
-      <div>
-        <p style="font-family: Lato;" >{{movie_details.overview}}</p>
-        <p>
-          {{movie_details.video}}
-        </p>
-        <p>
-          {{movie_details.profit}}
-        </p>
-      </div>
-    </div>
-  </div> -->
-
-    <!-- <div class="container">
-    <div>
-      <img src="https://images.ottplay.com/posters/Wonder_Woman_2017_movie_poster_9.jpg" alt="">
-    </div>
-    <div style="background-color: #cccbca;">
-      <div style="background-color: #106394; height: 60px;">
-        <p style="font-family: Lato; font-size: 35px; font-weight: 100; color: #01DCDD; text-align: left;">Mulher-Maravilha</p>
-      </div>
-      <div>
-        <p style="font-family: Lato;">Treinada desde cedo para ser uma guerreira imbativel, Diana Prince (Gal Gadot) nunca saiu da paradisíaca ilha em que é reconhecida como Princesa das Amazonas. Quando o piloto Steve Trevor (Chris Pine) se acidenta e cai numa praia do local. ela descobre que uma guerra sem precedentes está se espalhando pelo mundo e decide deixar seu lar certa de que pode parar 0 conflito. Lutando para acabar com todas as lutas, Diana percebe 0 alcance de seus poderes e sua verdadeira missão na Terra.</p>
-      </div>
-    </div>
-  </div> -->
 </div>
-
-<router-outlet></router-outlet>
