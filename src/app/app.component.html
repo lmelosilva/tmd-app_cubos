@@ -1,0 +1,142 @@
+<!-- Toolbar -->
+
+<head>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Abel:400,700' rel='stylesheet' type='text/css'>
+</head>
+
+<div class="toolbar" role="banner">
+    <h1 class="page_header">Movies</h1>
+</div>
+
+<div class="content" role="main">
+    <!-- <ul>
+    <li *ngFor="let movie of movies">
+      
+    </li>
+  </ul> -->
+    <input class="search_movies" type="search" (search)="search($event)" placeholder="Busque um filme por nome, ano ou gênero...">
+
+    <!-- <router-outlet></router-outlet> -->
+
+    <div *ngIf="!movie_details">
+        <div class="container_overview" *ngFor="let movie of movies_filtered;index as i">
+            <div class="wrapper" (click)="getMovieById(movie.id)">
+                <img class="img_overview" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="">
+            </div>
+            <div style="background-color: #cccbca;">
+                <div class="header_overview">
+                    <p (click)="getMovieById(movie.id)" class="movie_title">{{movie.title}}</p>
+                </div>
+                <div>
+                    <p class="movie_release">{{movie.release_date | date: 'dd/MM/yyyy'}}</p>
+                    <div style="text-align: end;padding: 15px;">
+                        <p class="movie_rating">
+                            {{movie.vote_average / 10 | percent}}
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <p class="movie_overview">{{movie.overview}}</p>
+                    <div style="padding: 25px;">
+                        <p class="movie_tags" *ngFor="let tag of movie.genre_ids;index as i">
+                            {{getGenreName(tag)}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="movies.length != 0">
+            <mat-paginator #paginator [length]="length" [pageSize]="pageSize" (page)="filter_movies($event)" aria-label="Select page">
+            </mat-paginator>
+        </div>
+    </div>
+
+    <div *ngIf="movie_details">
+        <div class="header_details" style="background-color: #cccbca; height: 80px;">
+            <p class="movie_title_details">{{movie_details.title}}</p>
+            <p class="movie_release_details">{{movie_details.release_date | date: 'dd/MM/yyyy'}}</p>
+        </div>
+        <div>
+
+        </div>
+    </div>
+    <div class="container_details" *ngIf="movie_details">
+        <div style="background-color: #ebebeb;">
+            <p class="details_informations_headers">Sinopse</p>
+            <p class="movie_overview_details">{{movie_details.overview}}</p>
+
+
+            <p class="details_informations_headers">Informações</p>
+            <div class="display_informations">
+                <p class="details_informations">Situação</p>
+                <p class="details_informations">Idioma</p>
+                <p class="details_informations">Duração</p>
+                <p class="details_informations">Orçamento</p>
+                <p class="details_informations">Receita</p>
+                <p class="details_informations">Lucro</p>
+            </div>
+            <div class="display_informations">
+                <p class="details_informations_data">{{movie_details.status}}</p>
+                <p class="details_informations_data">{{movie_details.original_language}}</p>
+                <p class="details_informations_data">{{movie_details.runtime}}</p>
+                <p class="details_informations_data">{{movie_details.budget | currency:'USD'}}</p>
+                <p class="details_informations_data">{{movie_details.revenue | currency:'USD'}}</p>
+                <p class="details_informations_data">{{movie_details.profit | currency:'USD'}}</p>
+            </div>
+            <div style="padding: 20px;">
+                <p class="movie_tags" *ngFor="let tag of movie_details.genres;index as i">
+                    {{tag.name}}
+                </p>
+                <div style="padding: 20px; text-align: end;">
+                    <p class="movie_rating">
+                        {{movie_details.vote_average / 10 | percent}}
+                    </p>
+                </div>
+            </div>
+            <!--  -->
+        </div>
+        <div class="wrapper">
+            <img class="img_details" src="https://image.tmdb.org/t/p/w500/{{movie_details.poster_path}}" alt="">
+        </div>
+    </div>
+
+    <!-- <div class="container" *ngIf="movie_details">
+    <div>
+      <img src="https://image.tmdb.org/t/p/w500/{{movie_details.poster_path}}" alt="">
+    </div>
+    <div style="background-color: #cccbca;">
+      <div style="background-color: #106394; height: 60px;">
+        <p style="font-family: Lato; font-size: 35px; font-weight: 100; color: #01DCDD; text-align: left;">{{movie_details.title}}</p>
+      </div>
+      <div>
+        <p>{{movie_details.release_date}}</p>
+      </div>
+      <div>
+        <p style="font-family: Lato;" >{{movie_details.overview}}</p>
+        <p>
+          {{movie_details.video}}
+        </p>
+        <p>
+          {{movie_details.profit}}
+        </p>
+      </div>
+    </div>
+  </div> -->
+
+    <!-- <div class="container">
+    <div>
+      <img src="https://images.ottplay.com/posters/Wonder_Woman_2017_movie_poster_9.jpg" alt="">
+    </div>
+    <div style="background-color: #cccbca;">
+      <div style="background-color: #106394; height: 60px;">
+        <p style="font-family: Lato; font-size: 35px; font-weight: 100; color: #01DCDD; text-align: left;">Mulher-Maravilha</p>
+      </div>
+      <div>
+        <p style="font-family: Lato;">Treinada desde cedo para ser uma guerreira imbativel, Diana Prince (Gal Gadot) nunca saiu da paradisíaca ilha em que é reconhecida como Princesa das Amazonas. Quando o piloto Steve Trevor (Chris Pine) se acidenta e cai numa praia do local. ela descobre que uma guerra sem precedentes está se espalhando pelo mundo e decide deixar seu lar certa de que pode parar 0 conflito. Lutando para acabar com todas as lutas, Diana percebe 0 alcance de seus poderes e sua verdadeira missão na Terra.</p>
+      </div>
+    </div>
+  </div> -->
+</div>
+
+<router-outlet></router-outlet>

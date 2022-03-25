@@ -1,0 +1,32 @@
+[
+    {
+    "id": 1,
+    "titulo": "Thor: Ragnarok",
+    "cartaz":  "https://wp.ufpel.edu.br/empauta/files/2017/11/ThorRagnarokcartaz.jpg",
+    "lancamento": "25/10/2017",
+    "sinopse": "Thor está aprisionado do outro lado do universo, sem seu martelo, e se vê em uma corrida para voltar até Asgard e impedir o Ragnarok, a destruição de seu lar e o fim da civilização asgardiana que está nas mãos de uma nova e poderosa ameaça, a terrível Hela. Mas primeiro ele precisa sobreviver a uma batalha de gladiadores que o coloca contra seu ex-aliado e vingador, o Incrível Hulk. ",
+    "pontuação": 75,
+    "categorias": ["ação", "aventura", "Fantasia"],
+    "situação": "Lançado",
+    "idioma": "Inglês",
+    "duração": "2h10min",
+    "orçamento": "180.000.000,00",
+    "receita": "853.977.000,00",
+    "trailer": "https://www.youtube.com/watch?v=UvNnqWLruXA"
+    },
+    {
+    "id": 2,
+    "titulo": "Mulher-Maravilha",
+    "cartaz":  "https://static.wikia.nocookie.net/dccomicsextendeduniverse/images/c/cb/%27Wonder_Woman%27_2017.jpg/revision/latest?cb=20191113161800&path-prefix=pt-br",
+    "lancamento": "02/07/2017",
+    "sinopse": "Treinada desde cedo para ser uma guerreira imbativel, Diana Prince (Gal Gadot) nunca saiu da paradisíaca ilha em que é reconhecida como Princesa das Amazonas. Quando o piloto Steve Trevor (Chris Pine) se acidenta e cai numa praia do local. ela descobre que uma guerra sem precedentes está se espalhando pelo mundo e decide deixar seu lar certa de que pode parar 0 conflito. Lutando para acabar com todas as lutas, Diana percebe 0 alcance de seus poderes e sua verdadeira missão na Terra.  ",
+    "pontuação": "89",
+    "categorias": ["ação", "aventura", "Fantasia"],
+    "situação": "Lançado",
+    "idioma": "Inglês",
+    "duração": "2h21min",
+    "orçamento": "150.000.000,00",
+    "receita": "822.854.000,00",
+    "trailer": "https://www.youtube.com/watch?v=1Q8fG0TtVAY"
+    }
+]
